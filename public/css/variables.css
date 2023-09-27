@@ -1,0 +1,13 @@
+:root {
+  --purple-darkest: hsl(277, 100%, 15%);
+  --purple-mid: hsl(277, 100%, 30%);
+  --purple-light: hsl(277, 100%, 76%);
+
+  --gray-light: #fafafa;
+
+  --card-shadow-main: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  --card-shadow-secondary: 0px 5px 10px rgba(0, 0, 0, 0.25);
+
+  --danger: #570000;
+  --success: #31CB00;
+}

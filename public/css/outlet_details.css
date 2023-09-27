@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@600&display=swap");
+
+:root {
+	--main-dark: #2f004d;
+	--main-light: #d187ff;
+	--disabled: #aeaeae;
+}
+
+body {
+	margin: 0;
+}
+
+.content {
+	min-height: 1000px;
+}
+
+.two-column-page {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 50px;
+	margin-bottom: 100px;
+}
+
+.decorations {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.left-container {
+	
+}
+
+.width-30 {
+	width: 30%;
+}
+
+.right-container {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.detail-title {
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+}
+
+.head {
+	font-family: "Commissioner";
+	font-size: 3.2rem;
+	font-weight: 600;
+}
+
+.service-title {
+	position: relative;
+	color: var(--main-dark);
+	font-family: "Commissioner";
+	font-size: 2.5rem;
+	font-weight: 600;
+
+	margin: 50px;
+}
+
+.detail-text {
+	width: fit-content;
+	height: 20px;
+
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 1rem;
+	line-height: 20px;
+	/* identical to box height */
+
+	color: #2f004d;
+}
+
+.mt10 {
+	margin-top: 10px;
+}
+
+.star-rating i {
+	color: #ffce22;
+}
+
+.star-rating .detail-text {
+	font-weight: 600;
+}
+
+.purple-line {
+	height: 5px;
+	width: 25vw;
+	background-color: var(--main-dark);
+}
+
+.light-purple-line {
+	position: relative;
+	top: 10px;
+	left: 150px;
+	height: 5px;
+	width: 25vw;
+	background-color: var(--main-light);
+}
+
+.category {
+	width: 95px;
+	height: fit-content;
+	background: #ecccff;
+	border-radius: 25px;
+
+	text-align: center;
+	font-family: "Commissioner";
+
+	padding: 3px;
+}
+
+.categories-provided {
+	position: relative;
+	display: flex;
+	top: 15px;
+	margin-left: 50px;
+	gap: 25px;
+}
+
+.list-of-categories {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	position: relative;
+	margin-left: 50px;
+	top: 30px;
+	padding: 10px;
+	width: 40vw;
+}
+
+.service-card {
+	width: 100%;
+	min-width: fit-content;
+	height: fit-content;
+
+	background: #f5e6ff;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+	border-radius: 27px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	padding: 10px;
+}
+
+.service-detail {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	width: 60%;
+}
+
+.service-name-price {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	font-family: "Commissioner";
+}
+
+.service-name-price .service-name {
+	font-size: 1.1rem;
+	color: black;
+}
+
+.service-name-price .service-price {
+	font-size: 1.4rem;
+	color: var(--main-dark);
+}
+
+.count-btn {
+	width: 3rem;
+	height: 3rem;
+
+	color: white;
+	font-size: 2rem;
+	font-family: "Commissioner";
+	font-weight: bold;
+
+	background: #d187ff;
+	box-shadow: 0px 1.62963px 3.25926px 0.814815px rgba(0, 0, 0, 0.25);
+	border-radius: 100%;
+	border: none;
+}
+
+.product-increment {
+	width: 25%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.product-increment > span {
+	color: black;
+	font-size: 2rem;
+	font-weight: bold;
+	font-family: "Commissioner";
+}
+
+.amount-in-cart {
+	width: 25rem;
+	height: fit-content;
+
+	margin-right: 5rem;
+	margin-top: 5rem;
+	margin-left: auto;
+
+	background: #fcfcfc;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 84px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.amount-in-cart-details {
+	display: flex;
+	flex-direction: column;
+}
+
+.amount-in-cart-details > .text {
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 1.25rem;
+	line-height: 24px;
+
+	color: var(--main-dark);
+}
+
+.amount-in-cart-details > .price {
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 2.5rem;
+	line-height: 44px;
+	/* identical to box height */
+
+	color: black;
+}
+
+.checkout-container {
+	position: relative;
+	margin-left: auto;
+	margin-top: auto;
+	top: 120px;
+}
+
+.checkout-btn {
+	width: 452px;
+	height: fit-content;
+	padding: 10px;
+
+	margin-right: 5rem;
+
+	background: #2f004d;
+	border-radius: 63.8525px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	border: none;
+}
+
+.checkout-btn > span {
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 2rem;
+	line-height: 39px;
+	/* identical to box height */
+
+	color: #ffffff;
+}
+
+.reviews {
+	width: 50%;
+	margin-left: auto;
+	padding: 2rem;
+
+	display: flex;
+	flex-direction: column;
+	align-content: flex-end;
+}
+
+.reviews > span {
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 3rem;
+	line-height: 59px;
+	text-align: right;
+
+	color: #2f004d;
+}
+
+.review-list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.review-card {
+	width: 100%;
+	height: fit-content;
+
+	background: #fcfcfc;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 27px;
+
+	padding: 20px;
+}
+
+.star-and-rating {
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+
+	color: #ffce22;
+	height: fit-content;
+
+	display: flex;
+	flex-direction: row;
+	gap: 0.8rem;
+}
+
+.rating-text {
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 17px;
+
+	color: var(--main-dark);
+}
+
+.error-text {
+	color: red;
+}
+
+.pac-container {
+	z-index: 99999;
+}
+
+:disabled {
+	cursor: no-drop;
+	background-color: var(--disabled);
+}

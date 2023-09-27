@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@200&display=swap");
+/* Laundry Card */
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.content {
+	min-height: 1000px;
+}
+
+:root {
+	--main-dark: #2f004d;
+}
+
+.two-column-page {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+	/* gap: 80px; */
+}
+
+.pl-50 {
+	padding-left: 50px;
+}
+
+.laundry-outlets {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.outlet-card-information {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	gap: 5px;
+}
+
+.laundry-card-rectangle {
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	width: 60vw;
+	margin-top: 10px;
+
+	background: #fcfcfc;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 27px;
+	padding: 25px;
+}
+
+/* Great - 8.5 */
+.rating-text {
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+	/* identical to box height */
+
+	color: var(--main-dark);
+}
+
+/* Tebet, South Jakarta */
+.laundry-card-location-name {
+	width: fit-content;
+	height: 20px;
+
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 20px;
+	/* identical to box height */
+
+	color: #2f004d;
+}
+
+.laundry-card-outlet-name {
+	width: 334px;
+	height: 39px;
+
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 2rem;
+	line-height: 39px;
+
+	color: #000000;
+}
+
+.order-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: auto;
+	width: 80%;
+	height: fit-content;
+	padding: 10px;
+
+	background: #d187ff;
+	color: #ffffff;
+
+	font-family: "Commissioner";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.1rem;
+	line-height: 24px;
+	border-radius: 63.8525px;
+	border: none;
+}
+
+.order-button:hover {
+	cursor: pointer;
+}
+
+.card-line {
+	height: auto;
+	border: 1px solid #d187ff;
+}
+
+.button-holder {
+	display: flex;
+	justify-content: space-evenly;
+	width: 30%;
+	gap: 20%;
+}
+
+.sort-container {
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+	color: white;
+
+	background: var(--main-dark);
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 13px;
+	width: 20vw;
+	padding: 20px;
+}
+
+.sort-title {
+	font-size: 2rem;
+	font-weight: bold;
+	font-family: "Commissioner";
+}
+
+.sort-form-group {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	font-family: "Commissioner";
+}
+
+input[type="radio"] {
+	display: grid;
+	background-color: #fff;
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 1.15em;
+	height: 1.15em;
+	border: 0.15em solid currentColor;
+	border-radius: 50%;
+	place-content: center;
+}
+
+input[type="radio"]::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--main-dark);
+}
+
+input[type="radio"]:checked::before {
+	transform: scale(1);
+}
+
+.input-icons {
+	margin-left: 25vw;
+	margin-top: 20px;
+}
+
+.search-input {
+	width: 50vw;
+	height: 40px;
+	padding-left: 55px;
+	padding-top: 5px;
+
+	border: none;
+	background: #fafafa;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+	border-radius: 65px;
+}
+
+.input-icons i {
+	position: relative;
+	left: 45px;
+	color: #fff;
+	background-color: #d187ff;
+	padding: 10px;
+	border-radius: 50%;
+}
+
+.text-icons i {
+	/* color: var(--main-dark); */
+}
+
+.star-rating {
+	color: #ffce22;
+	display: flex;
+	flex-direction: row;
+	gap: 0.2rem;
+}
+
+.order-button > i {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.purple-line {
+	position: relative;
+	height: 5px;
+	width: 20vw;
+	left: -60px;
+	margin-top: 30px;
+	background-color: #d187ff;
+}
+
+.light-purple-line {
+	position: relative;
+	height: 5px;
+	width: 20vw;
+	left: 60px;
+	margin-top: 30px;
+	background-color: #2f004d;
+}
+
+.loader {
+	border: 16px solid #2f004d;
+	border-radius: 50%;
+	border-top: 16px solid #d187ff;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.centered {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 20px;
+}

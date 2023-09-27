@@ -1,0 +1,53 @@
+#toast {
+	position: fixed;
+	height: fit-content;
+	box-sizing: border-box;
+	padding: 2rem;
+	width: 25vw;
+	min-width: 300px;
+	top: 0;
+	border-radius: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+	opacity: 0;
+	z-index: 4000;
+}
+
+.open {
+	animation: come-down 500ms ease-out forwards;
+}
+
+@keyframes come-down {
+	from {
+		opacity: 0;
+		top: 0;
+	}
+	to {
+		opacity: 1;
+		top: 5rem;
+		pointer-events: all;
+	}
+}
+
+.success {
+	background-color: #148c01;
+}
+
+.fail {
+	background-color: #900000;
+}
+
+#closeToast {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 1.5rem;
+	transform: translate(-100%, 25%);
+	color: white;
+}
+
+#toastMessage {
+	color: white;
+}
