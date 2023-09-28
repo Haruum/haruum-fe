@@ -33,7 +33,7 @@ function CheckoutModal({
 				selectProps={{
 					customerAddress,
 					defaultInputValue: customerAddress,
-					onChange: setCustomerAddress,
+					onChange: (addr) => setCustomerAddress(addr.value.description),
 					className: "form-input width-30",
 				}}
 			/>

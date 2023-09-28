@@ -25,6 +25,7 @@
 .container--flex__sub {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .divisor {

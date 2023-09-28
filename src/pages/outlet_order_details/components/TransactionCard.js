@@ -15,7 +15,7 @@ function TransactionCard({ laundryItems, transactionAmount, paymentMethod }) {
 				))}
 			</div>
 			<p class="container__table__small">Total</p>
-			<p class="container__subtotal">{transactionAmount}</p>
+			<p class="container__subtotal">Rp{transactionAmount}</p>
 			<p class="container__method">paid using {paymentMethod}</p>
 		</div>
 	);

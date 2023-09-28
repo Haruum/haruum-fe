@@ -1,9 +1,9 @@
 function PageTitle({ title }) {
 	return (
-		<h1>
+		<h1 style={{ margin: 0 }}>
 			{title}
-			<hr id="rule-1" />
-			<hr id="rule-2" />
+			{/* <hr id="rule-1" />
+			<hr id="rule-2" /> */}
 		</h1>
 	);
 }

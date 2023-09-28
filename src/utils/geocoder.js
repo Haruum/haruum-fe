@@ -1,4 +1,4 @@
-import { setDefaults, fromPlaceId } from "react-geocode";
+import { setDefaults, fromPlaceId, fromAddress } from "react-geocode";
 
 const API_KEY = "AIzaSyAuzTtz8_h_S8hGb8IGUKPTzqyN6KiFGrc";
 
@@ -17,3 +17,8 @@ export const getLatitudeLongitudeFromPlaceID = async (placeID) => {
 		return { lat: null, lng: null };
 	}
 };
+
+export const getLatitudeLongitudeFromAddress = async (address) => {
+	const { results } = await fromAddress(address);
+	return results[0].geometry.location;
+}

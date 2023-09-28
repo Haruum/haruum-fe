@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import FormInput from "../../common/FormInput";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import PinkButton from "../../common/PinkButton";
-import { registerUser } from "../../api/customerAuth";
 import { getLatitudeLongitudeFromPlaceID } from "../../utils/geocoder";
+import { registerUser } from "../../api/outletAuth";
 import { toast } from "../../utils/toast";
 
-function CustomerRegistrationPage() {
+function OutletRegistrationPage() {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("");
@@ -34,10 +34,12 @@ function CustomerRegistrationPage() {
 
 			if (status !== 200) {
 				toast.open(data.message, "fail");
+
 			} else {
 				toast.open("User is successfully added", "success");
 				history("/login");
 			}
+
 		} catch (exception) {
 			toast.open(exception.message, "fail");
 		}
@@ -54,11 +56,10 @@ function CustomerRegistrationPage() {
 			<section>
 				<div class="form-container">
 					<div class="form-header">
-						<h1>Register as a Customer</h1>
+						<h1>Register as an Outlet</h1>
 					</div>
 					<div className="form-body">
 						<div class="form-input__grouper">
-							<input type="hidden" name="userType" value="CUSTOMER" />
 							<FormInput
 								inputField={"name"}
 								type={"text"}
@@ -106,4 +107,4 @@ function CustomerRegistrationPage() {
 	);
 }
 
-export default CustomerRegistrationPage;
+export default OutletRegistrationPage;

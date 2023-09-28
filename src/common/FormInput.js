@@ -1,4 +1,4 @@
-function FormInput({ inputField, type, value, setValue }) {
+function FormInput({ inputField, type, value, setValue, disabled }) {
 	return (
 		<div class="form-input__group">
 			<label class="form-input__label">{inputField.toUpperCase()}</label>
@@ -10,6 +10,7 @@ function FormInput({ inputField, type, value, setValue }) {
 				className="form-input"
 				value={value}
 				onChange={(e) => setValue(e.target.value)}
+				disabled={disabled ?? false}
 			/>
 		</div>
 	);

@@ -6,10 +6,10 @@ function TransactionItem({ item, pricePerItem, quantity, subTotal }) {
 			<div class="container__table__row">
 				<div class="container__table__col">{capitalizeWords(item)}</div>
 				<div class="container__table__col">
-					{pricePerItem}
+					Rp{pricePerItem}
 					<span class="container__table__small">x{quantity}</span>
 				</div>
-				<div class="container__table__col">{subTotal}</div>
+				<div class="container__table__col">Rp{subTotal}</div>
 			</div>
 			<br />
 		</>

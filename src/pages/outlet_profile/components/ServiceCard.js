@@ -1,8 +1,17 @@
+import Button from "../../../common/Button";
 import { capitalizeWords } from "../../../utils/string";
 
-function ServiceCard({ serviceName, pricePerItem, quantity, incrementQuantity, decrementQuantity }) {
+function ServiceCard({ service, setupModifyCategoryModal }) {
 	return (
-		<div className="service-card">
+		<div
+			className="service-card"
+			style={{
+				display: "flex",
+				flexDirection: "row",
+				alignItems: "center",
+				paddingRight: "10px",
+			}}
+		>
 			<div class="service-detail">
 				<svg
 					width="64"
@@ -34,15 +43,22 @@ function ServiceCard({ serviceName, pricePerItem, quantity, incrementQuantity, d
 					/>
 				</svg>
 				<div class="service-name-price">
-					<span class="service-name">{capitalizeWords(serviceName)}</span>
-					<span class="service-price">Rp {pricePerItem}/pcs</span>
+					<span class="service-name">
+						{capitalizeWords(service.service_category_name)}
+					</span>
+					<span class="service-price">Rp {service.item_price}/pcs</span>
 				</div>
 			</div>
-			<div class="product-increment">
-				<button class="count-btn" onClick={decrementQuantity}>-</button>
-				<span class="count-span">{quantity}</span>
-				<button class="count-btn" onClick={incrementQuantity}>+</button>
-			</div>
+			<Button
+				className={"status-pill purple"}
+				text={"Update"}
+				onClick={() =>
+					setupModifyCategoryModal(
+						service.service_category_name,
+						service.item_price
+					)
+				}
+			/>
 		</div>
 	);
 }

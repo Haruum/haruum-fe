@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth";
 
@@ -43,6 +43,16 @@ function NavBar() {
 					</>
 				) : (
 					<>
+						{userAuth.type === "customer" ? (
+							<li className="navbar__link">
+								<Link to="/customer/orders">Orders</Link>
+							</li>
+						) : (
+							<li className="navbar__link">
+								<Link to="/outlet/orders">Orders</Link>
+							</li>
+						)}
+
 						<li className="navbar__link--profile">
 							<Link to="#">Hello, {userAuth.username}! 👋</Link>
 							<div className="navbar__profile">

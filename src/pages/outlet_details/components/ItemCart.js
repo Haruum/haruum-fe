@@ -1,4 +1,4 @@
-import { capitalizeWords } from "../../../utils/firebase/string";
+import { capitalizeWords } from "../../../utils/string";
 
 function ItemCart({ quantity, item, subtotal }) {
   return (

@@ -22,6 +22,6 @@ export const getOutletByEmail = async (email) => {
 	let detailURL = `${OUTLET_DETAIL_URL}${email}`;
 	const response = await fetch(detailURL);
 	const data = await response.json();
-  console.log(data);
-	return { status: response.status, data: data };
+
+	return [response.status, data];
 };

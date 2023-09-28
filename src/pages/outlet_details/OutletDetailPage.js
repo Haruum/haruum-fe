@@ -11,7 +11,7 @@ import CheckoutModal from "./components/CheckoutModal";
 import { getCustomerData } from "../../api/customerAuth";
 import { AuthContext } from "../../context/auth";
 import { toast } from "../../utils/toast";
-import { getAllPaymentMethods, submitOrder } from "../../api/order";
+import { getAllPaymentMethods, submitOrder } from "../../api/customerOrder";
 
 function OutletDetailPage() {
 	const { email } = useParams();
@@ -33,7 +33,13 @@ function OutletDetailPage() {
 	const history = useNavigate();
 
 	const setOutletData = async () => {
-		const { status, data } = await getOutletByEmail(email);
+		const [status, data] = await getOutletByEmail(email);
+
+		if (status !== 200) {
+			history("/explore");
+			throw Error(data.message);
+		}
+
 		setOutletName(data.name);
 		setAddress(data.address);
 		setRating(data.outlet_rating);
@@ -50,20 +56,18 @@ function OutletDetailPage() {
 		const accessToken = userAuth.accessToken;
 
 		if (accessToken === null) {
-			toast.open("Please login to perform order", "fail");
 			history("/login");
+			throw Error("Please login to perform order.");
 		}
 
 		const [status, data] = await getCustomerData(accessToken);
 
 		if (status === 401) {
-			toast.open("Token has expired. Please login again.", "fail");
 			history("/login");
-			
+			throw Error("Token has expired. Please login again.");
 		} else if (status !== 200) {
-			toast.open(data.message, "fail");
 			history("/explore");
-
+			throw Error(data.message);
 		} else {
 			setUserAddress(data.latest_delivery_address);
 		}
@@ -73,9 +77,8 @@ function OutletDetailPage() {
 		const [status, data] = await getAllPaymentMethods();
 
 		if (status !== 200) {
-			toast.open(data.message, "fail");
 			history("/explore");
-
+			throw Error(data.message);
 		} else {
 			setPaymentMethods(data);
 			setSelectedPaymentMethod(data[0]);
@@ -83,9 +86,13 @@ function OutletDetailPage() {
 	};
 
 	const fetchInitialData = async () => {
-		await setAvailablePaymentMethods();
-		await setCustomerData();
-		await setOutletData();
+		try {
+			await setAvailablePaymentMethods();
+			await setCustomerData();
+			await setOutletData();
+		} catch (exception) {
+			toast.open(exception, "fail");
+		}
 	};
 
 	useEffect(() => {
@@ -139,9 +146,7 @@ function OutletDetailPage() {
 			}));
 	};
 
-	const changeAddressCallback = async () => {
-
-	}
+	const changeAddressCallback = async () => {};
 
 	const submitOrderCallback = async () => {
 		const [status, data] = await submitOrder(
@@ -151,20 +156,18 @@ function OutletDetailPage() {
 			transformOrderedItems(servicesProvided),
 			userAuth.accessToken
 		);
-		
+
 		if (status === 401) {
 			toast.open("Token is expired. Please login again.", "fail");
 			history("/login");
-
 		} else if (status !== 200) {
 			setConfirmationOpen(false);
 			toast.open(data.message, "fail");
-
 		} else {
 			toast.open(data.message, "success");
 			history("/explore");
 		}
-	}
+	};
 
 	const submitCallback = async () => {
 		await changeAddressCallback();

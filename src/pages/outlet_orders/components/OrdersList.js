@@ -1,16 +1,14 @@
-import NoActiveOrders from "./NoActiveOrders";
 import OrderCard from "./OrderCard";
 
-function OrdersList({ orders, type }) {
+function OrdersList({ orders }) {
 	return (
 		<section class="section">
 			<div class="list__wrapper">
-				
-				{orders.length > 0 ? orders.map((order) => (
+				{orders.map((order) => (
 					<OrderCard
 						orderID={order.id}
 						orderDate={new Date(order.date_created).toLocaleString()}
-						outletName={order.outlet_name}
+						customerName={order.customer_name}
 						status={order.status_name}
 						itemCount={order.laundry_receipts.reduce(
 							(accum, newItem) => accum + newItem.quantity,
@@ -18,7 +16,7 @@ function OrdersList({ orders, type }) {
 						)}
 						transactionAmount={order.transaction_amount}
 					/>
-				)) : <NoActiveOrders type={type}/>}
+				))}
 			</div>
 		</section>
 	);

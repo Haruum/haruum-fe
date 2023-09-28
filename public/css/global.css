@@ -73,6 +73,10 @@
 	color: white;
 }
 
+.confirm-button:hover {
+	cursor: pointer;
+}
+
 .cancel-button {
 	background-color: darkred;
 	padding: 8px;

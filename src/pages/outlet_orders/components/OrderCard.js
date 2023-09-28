@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import StatusPill, { DatePill } from "../../../common/Pill";
 
-function OrderCard({ orderID, orderDate, outletName, status, itemCount, transactionAmount}) {  
+function OrderCard({ orderID, orderDate, customerName, status, itemCount, transactionAmount}) {  
 	return (
 		<div class="list-card">
 			<section class="list-card__section">
-				<h3>{outletName}</h3>
+				<h3>{customerName}</h3>
 			</section>
 			<section class="list-card__section" style={{ paddingTop: "10px" }}>
 				<StatusPill status={status}/>
@@ -17,7 +17,7 @@ function OrderCard({ orderID, orderDate, outletName, status, itemCount, transact
 						<div class="item-amount">{itemCount} item(s)</div>
 						<div class="transaction-amount">Rp{transactionAmount}</div>
 					</div>
-					<Link to={`/customer/order/${orderID}`} class="detail-button">
+					<Link to={`/outlet/order/${orderID}`} class="detail-button">
 						View Details
 						<svg
 							width="24"

@@ -15,7 +15,7 @@ const setUserType = (type) => {
 };
 
 export const getAccessToken = () => {
-	const accessToken = localStorage.getItem("accessToken");
+	const accessToken = localStorage.getItem("accessToken") ?? null;
 	try {
 		return JSON.parse(accessToken);
 	} catch (error) {
@@ -24,7 +24,7 @@ export const getAccessToken = () => {
 };
 
 export const getUserName = () => {
-	const userName = localStorage.getItem("userName");
+	const userName = localStorage.getItem("userName") ?? null;
 	try {
 		return JSON.parse(userName);
 	} catch (error) {
@@ -34,7 +34,7 @@ export const getUserName = () => {
 };
 
 export const getUserType = () => {
-	const userType = localStorage.getItem("type");
+	const userType = localStorage.getItem("type") ?? null;
 	try {
 		return JSON.parse(userType);
 	} catch (error) {
@@ -44,12 +44,11 @@ export const getUserType = () => {
 
 export const loginUser = async (email, password) => {
 	const user = await signInUser(email, password);
+	console.log(user);
 	const [customerStatus, customerData] = await getCustomerData(
 		user.accessToken
 	);
 	const [outletStatus, outletData] = await getOutletData(user.email);
-
-	console.log(customerStatus, customerData, outletStatus, outletData);
 
 	if (customerStatus === 200) {
 		setAccessToken(user.accessToken);

@@ -44,10 +44,10 @@ function Footer() {
 					</Link>
 				</div>
 				<h2 className="footer__main customer">Customer</h2>
-				<Link to="/register" className="footer__link signup">
+				<Link to="/register/customer" className="footer__link signup">
 					Sign Up
 				</Link>
-				<Link to="/outlet/explore" className="footer__link explore">
+				<Link to="/explore" className="footer__link explore">
 					Explore
 				</Link>
 				<Link to="" className="footer__link help">Help</Link>
