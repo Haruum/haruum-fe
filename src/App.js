@@ -30,6 +30,7 @@ function App() {
 				<NavBar />
 				<main className="content">
 					<Routes>
+						<Route path="/" element={<ExplorePage />} />
 						<Route path="/logout" element={<Logout />} />
 						<Route path="/login" element={<LoginPage />} />
 						<Route path="/explore" element={<ExplorePage />} />

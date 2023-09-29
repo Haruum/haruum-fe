@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router";
 import PageTitle from "../../common/PageTitle";
-import StatusPill from "../../common/Pill";
+import StatusPill, { BluePill } from "../../common/Pill";
 import PinkButton from "../../common/PinkButton";
 import TransactionCard from "./components/TransactionCard";
 import Loader from "../../common/Loader";
@@ -80,6 +80,21 @@ function CustomerOrderDetailPage() {
 				<div class="container--flex__sub" style={{ gap: "15px" }}>
 					<PageTitle title={"Order Details"} />
 					<h4 class="subheader">{orderDetail.outlet_name}</h4>
+					<div
+						class="review-card width-30"
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+							gap: "10px",
+							textAlign: "center",
+						}}
+					>
+						<BluePill
+							text={`Phone Number: ${orderDetail.outlet_phone_number}`}
+						/>
+						{orderDetail.outlet_address}
+					</div>
 					<StatusPill status={orderDetail.status_name} />
 					<TransactionCard
 						laundryItems={orderDetail.laundry_receipts}

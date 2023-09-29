@@ -24,7 +24,7 @@ function LoginCard({ email, setEmail, password, setPassword, handleLogin }) {
 				<div class="form-subheader">
 					New to haruum?{" "}
 					<span>
-						<Link to="/register">SIGN UP</Link> now!
+						<Link to="/register/customer">SIGN UP</Link> now!
 					</span>
 				</div>
 			</div>

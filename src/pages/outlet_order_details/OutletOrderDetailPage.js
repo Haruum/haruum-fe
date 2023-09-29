@@ -97,9 +97,20 @@ function OutletOrderDetailPage() {
 				<div class="container--flex__sub" style={{ gap: "15px" }}>
 					<PageTitle title={"Order Details"} />
 					<h4 class="subheader">Customer: {orderDetail.customer_name}</h4>
-					<div class="review-card width-30" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-						<BluePill text={"Phone Number: 082312334620"}/>
-						Address: {orderDetail.pickup_delivery_address}
+					<div
+						class="review-card width-30"
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: "center",
+							gap: "10px",
+							textAlign: "center",
+						}}
+					>
+						<BluePill
+							text={`Phone Number: ${orderDetail.customer_phone_number}`}
+						/>
+						{orderDetail.pickup_delivery_address}
 					</div>
 					<div class="status-pill washed" style={{ width: "fit-content" }}>
 						{orderDetail.id}

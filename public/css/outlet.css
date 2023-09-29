@@ -135,7 +135,7 @@ body {
 .sort-container {
 	display: flex;
 	flex-direction: column;
-	height: fit-content;
+	height: 145px;
 	color: white;
 
 	background: var(--main-dark);

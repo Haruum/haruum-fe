@@ -1,8 +1,9 @@
 function SortToggler() {
 	return (
 		<>
-			<div class="sort-container">
-				<span class="sort-title">Sort based on</span>
+			<div class="sort-container" style={{ textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+				Welcome! Let's start searching for the laundry of your needs.
+				{/* <span class="sort-title">Sort based on</span>
 				<div class="sort-form-group">
 					<input
 						type="radio"
@@ -26,7 +27,7 @@ function SortToggler() {
 				<div class="sort-form-group">
 					<input type="radio" name="sort-value" value="Price" id="sort-price" />
 					<label for="sort-price">Price</label>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);

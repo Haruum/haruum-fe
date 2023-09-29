@@ -24,7 +24,7 @@ function CheckoutModal({
 					<ItemCart
 						quantity={item.quantity}
 						item={item.service_category_name}
-						subtotal={item.subtotal}
+						subtotal={item.item_price * item.quantity}
 					/>
 				))}
 			<TotalPrice cartAmount={cartAmount} />
