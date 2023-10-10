@@ -1,9 +1,9 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+import { initializeApp } from "firebase/app";
 import {
 	getAuth,
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+} from "firebase/auth";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCrxj5mT3Qo0u8keyjVkkNRdwg6QYAsT3M",
