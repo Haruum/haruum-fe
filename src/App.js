@@ -1,6 +1,6 @@
 import "./App.css";
 import Footer from "./common/Footer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import NavBar from "./common/NavBar";
 import ExplorePage from "./pages/explore/ExplorePage";
 import OutletDetailPage from "./pages/outlet_details/OutletDetailPage";
@@ -26,7 +26,7 @@ function App() {
 
 	return (
 		<AuthContext.Provider value={[userAuth, setUserAuth]}>
-			<BrowserRouter>
+			<HashRouter>
 				<NavBar />
 				<main className="content">
 					<Routes>
@@ -61,7 +61,7 @@ function App() {
 					</Routes>
 				</main>
 				<Footer />
-			</BrowserRouter>
+			</HashRouter>
 		</AuthContext.Provider>
 	);
 }

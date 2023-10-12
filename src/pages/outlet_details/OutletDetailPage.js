@@ -5,7 +5,7 @@ import CheckoutButton from "./components/CheckoutButton";
 import ReviewList from "./components/ReviewList";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { getOutletByEmail } from "../../api/explore";
+import { getOutletByEmail, getOutletReviews } from "../../api/explore";
 import Modal from "react-modal";
 import CheckoutModal from "./components/CheckoutModal";
 import { getCustomerData } from "../../api/customerAuth";
@@ -23,6 +23,7 @@ function OutletDetailPage() {
 	const [outletName, setOutletName] = useState("");
 	const [address, setAddress] = useState("");
 	const [rating, setRating] = useState(0);
+	const [reviews, setReviews] = useState([]);
 	const [servicesProvided, setServicesProvided] = useState([]);
 	const [cartAmount, setCartAmount] = useState(0);
 
@@ -85,11 +86,23 @@ function OutletDetailPage() {
 		}
 	};
 
+	const fetchReviewList = async () => {
+		const [status, data] = await getOutletReviews(email);
+
+		if (status !== 200) {
+			history("/explore");
+			throw Error(data.message);
+		} else {
+			setReviews(data);
+		}
+	}
+
 	const fetchInitialData = async () => {
 		try {
 			await setAvailablePaymentMethods();
 			await setCustomerData();
 			await setOutletData();
+			await fetchReviewList();
 		} catch (exception) {
 			toast.open(exception, "fail");
 		}
@@ -272,7 +285,7 @@ function OutletDetailPage() {
 						/>
 					</svg>
 				</div>
-				<ReviewList />
+				<ReviewList reviews={reviews}/>
 			</div>
 		</>
 	);

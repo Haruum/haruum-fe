@@ -14,15 +14,17 @@ function ExplorePage() {
 
 	const history = useNavigate();
 
-	const setCoordinate = () => {
-		navigator.geolocation.getCurrentPosition((position) => {
+	const setCoordinateAndFetchOutletData = () => {
+		navigator.geolocation.getCurrentPosition(async (position) => {
 			setLatitude(position.coords.latitude);
 			setLongitude(position.coords.longitude);
+			const outletData = await getOutlet(nameSearch, position.coords.latitude, position.coords.longitude);
+			setOutlets(outletData);
 		});
 	};
 
 	useEffect(() => {
-		setCoordinate();
+		setCoordinateAndFetchOutletData();
 	}, []);
 
 	const setOutletData = async () => {
@@ -31,7 +33,9 @@ function ExplorePage() {
 	};
 
 	useEffect(() => {
-		setOutletData();
+		if (nameSearch !== "") {
+			setOutletData();
+		}
 	}, [nameSearch]);
 
 	return (

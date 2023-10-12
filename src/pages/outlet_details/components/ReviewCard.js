@@ -1,7 +1,4 @@
-function ReviewCard() {
-	const rating = 3.4;
-	const comment = "Lorem ipsum";
-
+function ReviewCard({ rating, comment }) {
 	return (
 		<div class="review-card">
 			<div class="star-and-rating">

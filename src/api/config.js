@@ -1,1 +1,1 @@
-export const GATEWAY_URL = "http://192.168.59.112:31180/";
+export const GATEWAY_URL = `http://${window.REACT_APP_GATEWAY_URL}/`;
